@@ -27,7 +27,7 @@ export interface VideoFrameData {
   spatialColors?: number[][][]; // [row][col][r, g, b] (0.0 to 1.0)
   spatialRelief?: number[][];   // [row][col] edge/contrast relief (0.0 to 1.0)
   orthomosaicUrl?: string;      // Continuous corridor orthomosaic texture slice
-  depthMap?: { data: number[]; width: number; height: number }; // MiDaS monocular depth map
+  depthMap?: DepthMap; // MiDaS monocular depth map
 }
 
 export interface CameraTrajectoryPoint {
@@ -52,6 +52,7 @@ export interface TacticalStructure {
 export interface ReconstructedTerrainModel {
   missionId: string;
   missionName: string;
+  videoFileName?: string;
   gridResolution: number;
   gridSize: number;
   vertices: number[];   // Flattened [x, y, z, x, y, z...]
@@ -297,17 +298,13 @@ export async function extractFramesFromVideo(
     const thumbnailUrl = canvas.toDataURL("image/jpeg", 0.90);
 
     // Run monocular depth estimation on sharp keyframes
-    let depthMapData: { data: number[]; width: number; height: number } | undefined;
+    let depthMapData: DepthMap | undefined;
     if (isSharp) {
       try {
         const depthEngine = getDepthEngine({ resolution: 256, maxElevationM: 8.5 });
         await depthEngine.initialize();
         const dm = await depthEngine.estimateDepth(canvas);
-        depthMapData = {
-          data: Array.from(dm.data),
-          width: dm.width,
-          height: dm.height,
-        };
+        depthMapData = dm;
       } catch {
         // Depth estimation failed — continue without it
       }
@@ -1279,6 +1276,7 @@ export function reconstructTerrainFromKeyframes(
     return {
       missionId,
       missionName,
+      videoFileName,
       gridResolution: resolution,
       gridSize,
       vertices: Array.from(vertices),
@@ -1462,6 +1460,7 @@ export function reconstructTerrainFromKeyframes(
   return {
     missionId,
     missionName,
+    videoFileName,
     gridResolution: resolution,
     gridSize,
     vertices: Array.from(vertices),

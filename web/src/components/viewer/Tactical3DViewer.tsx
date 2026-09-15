@@ -65,7 +65,7 @@ function generateTopoTexture(model: ReconstructedTerrainModel, resolution: numbe
   const minY = model.bounds.minY;
   const maxY = Math.max(minY + 1, model.bounds.maxY);
   const rangeY = maxY - minY;
-  const resGrid = model.resolution;
+  const resGrid = model.gridResolution;
   const numPerRow = resGrid + 1;
 
   for (let y = 0; y < resolution; y++) {
@@ -137,7 +137,7 @@ function generateFlirTexture(model: ReconstructedTerrainModel, resolution: numbe
   const minY = model.bounds.minY;
   const maxY = Math.max(minY + 1, model.bounds.maxY);
   const rangeY = maxY - minY;
-  const resGrid = model.resolution;
+  const resGrid = model.gridResolution;
   const numPerRow = resGrid + 1;
 
   for (let y = 0; y < resolution; y++) {
@@ -194,7 +194,7 @@ function generateNvgTexture(model: ReconstructedTerrainModel, resolution: number
   const minY = model.bounds.minY;
   const maxY = Math.max(minY + 1, model.bounds.maxY);
   const rangeY = maxY - minY;
-  const resGrid = model.resolution;
+  const resGrid = model.gridResolution;
   const numPerRow = resGrid + 1;
 
   for (let y = 0; y < resolution; y++) {
@@ -641,7 +641,7 @@ export function Tactical3DViewer({
     if (skirtMeshRef.current) scene.remove(skirtMeshRef.current);
     if (basePlateRef.current) scene.remove(basePlateRef.current);
 
-    const res = model.resolution;
+    const res = model.gridResolution;
     const numPerRow = res + 1;
     const baseY = Math.min(-7.0, model.bounds.minY * elevationScale - 3.5);
 

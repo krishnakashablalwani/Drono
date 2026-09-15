@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <style>
+    path { stroke: #17191c; }
+    @media (prefers-color-scheme: dark) {
+      path { stroke: #f4f4f5; }
+    }
+  </style>
+  <!-- Upper Delta Drone -->
+  <path d="M24 5 L43 16 L35 19.5 L29 18 L24 22 L19 18 L13 19.5 L5 16 Z" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M24 5 V15 M21 11.5 L24 15 L27 11.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M17 14.5 L19 9 L21 13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M31 14.5 L29 9 L27 13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Lower Isometric Terrain Mesh -->
+  <path d="M6 31.5 V35.5 L24 44.5 L42 35.5 V31.5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M24 39.5 V44.5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M24 24.5 L42 31.5 L24 39.5 L6 31.5 Z" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M24 24.5 L24 30.5 L24 39.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M6 31.5 L24 30.5 L42 31.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M15 28 L24 30.5 L33 28" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M15 35.5 L24 30.5 L33 35.5" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M15 28 V35.5" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M33 28 V35.5" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

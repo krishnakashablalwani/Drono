@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *, .dark, .dark *));
+
+@theme {
+  /* Semantic Core Colors */
+  --color-foreground: var(--text-primary);
+  --color-background: var(--bg-primary);
+  --color-card: var(--bg-card);
+  --color-floating: var(--bg-floating);
+
+  /* Steep Palette Tokens */
+  --color-ink-black: var(--color-ink-black);
+  --color-paper-white: var(--color-paper-white);
+  --color-mist-gray: var(--color-mist-gray);
+  --color-fog-white: var(--color-fog-white);
+  --color-slate-gray: var(--color-slate-gray);
+  --color-ash-gray: var(--color-ash-gray);
+  --color-smoke-gray: var(--color-smoke-gray);
+  --color-blush-peach: var(--color-blush-peach);
+  --color-sienna-brown: var(--color-sienna-brown);
+}
+
+@layer base {
+  :root {
+    /* Steep Design Tokens (Light Mode - Warm Paper) */
+    --color-ink-black: #17191c;
+    --color-paper-white: #ffffff;
+    --color-mist-gray: #f2f2f3;
+    --color-fog-white: #fafafb;
+    --color-slate-gray: #777b86;
+    --color-ash-gray: #979799;
+    --color-smoke-gray: #a3a6af;
+    --color-blush-peach: #fbe1d1;
+    --color-sienna-brown: #5d2a1a;
+
+    /* Semantic surface mapping for Light */
+    --bg-primary: #ffffff;
+    --bg-secondary: #fafafb;
+    --bg-card: #f2f2f3;
+    --bg-floating: #ffffff;
+    
+    --text-primary: #17191c;
+    --text-secondary: #777b86;
+    --text-tertiary: #979799;
+    --text-muted: #a3a6af;
+    
+    --border-subtle: #ececec;
+    --border-hairline: rgba(4, 23, 43, 0.08);
+
+    /* Radii */
+    --radius-cards: 24px;
+    --radius-elevated: 20px;
+    --radius-inputs: 16px;
+    --radius-images: 12px;
+    --radius-buttons: 9999px;
+
+    /* Shadows */
+    --shadow-floating: 0 0 0 1px rgba(4, 23, 43, 0.05), 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+
+    /* Tactical HUD Grid Overlay */
+    --grid-line-color: rgba(0, 0, 0, 0.04);
+  }
+
+  [data-theme="dark"],
+  .dark {
+    /* Steep Design Tokens (Dark Mode - Pure Black / Stealth Night) */
+    --color-ink-black: #f4f4f5;
+    --color-paper-white: #000000;
+    --color-mist-gray: #121214;
+    --color-fog-white: #18181b;
+    --color-slate-gray: #9da1ad;
+    --color-ash-gray: #717684;
+    --color-smoke-gray: #525866;
+    --color-blush-peach: #2a150c;
+    --color-sienna-brown: #f6c4aa;
+
+    /* Semantic surface mapping for Dark (Pitch Black) */
+    --bg-primary: #000000;
+    --bg-secondary: #080809;
+    --bg-card: #0f1012;
+    --bg-floating: #18191c;
+
+    --text-primary: #f4f4f5;
+    --text-secondary: #9da1ad;
+    --text-tertiary: #717684;
+    --text-muted: #525866;
+
+    --border-subtle: rgba(255, 255, 255, 0.1);
+    --border-hairline: rgba(255, 255, 255, 0.07);
+
+    --shadow-floating: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 20px 25px -5px rgba(0, 0, 0, 0.8), 0 8px 10px -6px rgba(0, 0, 0, 0.6);
+
+    /* Tactical HUD Grid Overlay */
+    --grid-line-color: rgba(255, 255, 255, 0.035);
+  }
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  overflow-x: hidden;
+}
+
+/* Steep Serif Display Typography */
+.font-serif-display {
+  font-family: "Source Serif 4", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+/* Steep Sans Typography */
+.font-sans-ui {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Tactical HUD Subtle Grid Pattern */
+.hud-grid-bg {
+  background-image: 
+    linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line-color) 1px, transparent 1px);
+  background-size: 44px 44px;
+  background-position: center top;
+}
+
+/* Floating Artifact Container */
+.floating-artifact {
+  background-color: var(--bg-floating);
+  border-radius: var(--radius-elevated);
+  box-shadow: var(--shadow-floating);
+  border: 1px solid var(--border-hairline);
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Neutral Card */
+.neutral-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-cards);
+  border: 1px solid var(--border-hairline);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Accent Peach Card */
+.accent-peach-card {
+  background-color: var(--color-blush-peach);
+  color: var(--color-sienna-brown);
+  border-radius: var(--radius-cards);
+  border: 1px solid rgba(246, 196, 170, 0.18);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Pill Buttons */
+.btn-pill-filled {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  border-radius: 9999px;
+  padding: 10px 22px;
+  font-size: 15px;
+  font-weight: 450;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: opacity 0.2s ease, transform 0.1s ease, background-color 0.2s ease, color 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.btn-pill-filled:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-pill-ghost {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 9999px;
+  padding: 10px 22px;
+  font-size: 15px;
+  font-weight: 450;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-pill-ghost:hover {
+  background-color: var(--color-mist-gray);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 3px;
+}
+
+/* Bulletproof Theme Logo Visibility */
+.dark .brand-logo-light {
+  display: none !important;
+}
+.dark .brand-logo-dark {
+  display: block !important;
+}
+:root:not(.dark) .brand-logo-light,
+[data-theme="light"] .brand-logo-light {
+  display: block !important;
+}
+:root:not(.dark) .brand-logo-dark,
+[data-theme="light"] .brand-logo-dark {
+  display: none !important;
+}

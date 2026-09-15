@@ -1,0 +1,30 @@
+# Node dependencies
+node_modules
+web/node_modules
+
+# Next.js build & runtime
+web/.next
+web/out
+web/AGENTS.md
+web/CLAUDE.md
+
+# Environment variables
+.env
+.env*.local
+
+# Python cache & virtual environments
+__pycache__
+*.py[cod]
+*$py.class
+.venv
+venv
+ENV/
+env/
+
+# IDE & OS files
+.DS_Store
+Thumbs.db
+*.log
+*.tsbuildinfo
+.vscode/
+.idea/

@@ -1,0 +1,29 @@
+{
+  "name": "drono-tactical-platform",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "web"
+  ],
+  "description": "Drono: Single-Pass Drone Video to Accurate 3D Model Generation System",
+  "scripts": {
+    "dev": "npm run dev --prefix web",
+    "build": "npm run build --prefix web",
+    "lint": "npm run lint --prefix web",
+    "test": "npm run test --prefix web",
+    "test:watch": "npm run test:watch --prefix web",
+    "ai:dev": "python -m uvicorn ai_services.main:app --reload --port 8000"
+  },
+  "keywords": [
+    "defense",
+    "reconnaissance",
+    "drone",
+    "photogrammetry",
+    "3d-reconstruction",
+    "threejs",
+    "ntro",
+    "computer-vision"
+  ],
+  "author": "Krishna & Drono Team",
+  "license": "MIT"
+}

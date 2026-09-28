@@ -53,6 +53,7 @@ export interface ReconstructedTerrainModel {
   missionId: string;
   missionName: string;
   videoFileName?: string;
+  meshUrl?: string;
   gridResolution: number;
   gridSize: number;
   vertices: number[];   // Flattened [x, y, z, x, y, z...]

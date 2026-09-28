@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState, useMemo } from "react";
 import * as THREE from "three";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import {
   Layers,
   Eye,
@@ -715,6 +716,21 @@ export function Tactical3DViewer({
     if (pointCloudRef.current) scene.remove(pointCloudRef.current);
     if (wireframeRef.current) scene.remove(wireframeRef.current);
     if (gridHelperRef.current) scene.remove(gridHelperRef.current);
+
+    if (model.meshUrl) {
+      const loader = new GLTFLoader();
+      loader.load(model.meshUrl, (gltf) => {
+        const mesh = gltf.scene;
+        // Optionally apply scale or materials here
+        terrainMeshRef.current = mesh as any; // Store ref
+        scene.add(mesh);
+      }, undefined, (error) => {
+        console.error("Failed to load GLTF model from backend:", error);
+      });
+      return;
+    }
+
+    if (!model.vertices || model.vertices.length === 0) return;
 
     const geometry = new THREE.BufferGeometry();
     

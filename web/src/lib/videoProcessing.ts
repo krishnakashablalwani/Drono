@@ -12,7 +12,7 @@
  * 7. Synthetic Drone Flight Video Generator for zero-dependency live demos
  */
 
-import { DepthEstimationEngine, getDepthEngine, generateNormalMapFromDepth, type DepthMap } from './depthEstimation';
+import { DepthEstimationEngine, getDepthEngine, type DepthMap } from './depthEstimation';
 
 export interface VideoFrameData {
   frameIndex: number;
@@ -63,7 +63,8 @@ export interface ReconstructedTerrainModel {
   textureDataUrl?: string; // High-resolution composite orthomosaic image from video frames
   normalMapUrl?: string;   // Tangent-space normal bump map for dynamic directional lighting
   isDirectVideoReconstruction?: boolean; // True when synthesized directly from real video footage
-  depthSource?: 'neural' | 'procedural'; // Source of depth/elevation data
+  depthSource?: 'neural' | 'procedural' | 'sfm'; // Source of depth/elevation data
+  isPointCloud?: boolean;
   bounds: {
     minX: number;
     maxX: number;
@@ -176,8 +177,8 @@ export async function extractFramesFromVideo(
   const {
     maxFrames = 24,
     blurThreshold = 120.0,
-    targetWidth = 320,
-    targetHeight = 180,
+    targetWidth = 640,
+    targetHeight = 360,
   } = options;
 
   const duration = video.duration || 10;
@@ -200,30 +201,53 @@ export async function extractFramesFromVideo(
   const frames: VideoFrameData[] = [];
   const totalSamples = Math.min(maxFrames, Math.floor(duration / effectiveInterval));
 
-  // Helper to seek video and wait for frame ready with timeout failsafe
+  /**
+   * Robust seek: sets currentTime, waits for both the 'seeked' event AND
+   * an extra animation frame (to ensure the decoded frame is painted).
+   * Falls back after 2000ms to prevent infinite hangs on broken videos.
+   */
   const seekTo = (time: number): Promise<void> => {
     return new Promise((resolve) => {
-      let finished = false;
-      const done = () => {
-        if (!finished) {
-          finished = true;
-          video.removeEventListener("seeked", onSeeked);
-          clearTimeout(timer);
-          resolve();
-        }
+      const targetTime = Math.max(0, Math.min(time, duration - 0.05));
+
+      let settled = false;
+      const settle = () => {
+        if (settled) return;
+        settled = true;
+        resolve();
       };
-      const onSeeked = () => done();
-      const timer = setTimeout(done, 600);
-      video.addEventListener("seeked", onSeeked, { once: true });
+
+      // Hard safety timeout — never hang forever
+      const safetyTimer = setTimeout(settle, 2000);
+
+      // If the video is already at this time (e.g. frame 0), just wait one
+      // animation frame so the canvas paint is fresh.
+      if (Math.abs(video.currentTime - targetTime) < 0.01) {
+        requestAnimationFrame(() => {
+          clearTimeout(safetyTimer);
+          settle();
+        });
+        return;
+      }
+
+      const onSeeked = () => {
+        video.removeEventListener("seeked", onSeeked);
+        // Wait one extra animation frame so the decoded frame is
+        // composited and available for drawImage.
+        requestAnimationFrame(() => {
+          clearTimeout(safetyTimer);
+          settle();
+        });
+      };
+
+      video.addEventListener("seeked", onSeeked);
+
       try {
-        const targetTime = Math.max(0, Math.min(time, duration - 0.05));
-        if (Math.abs(video.currentTime - targetTime) < 0.01) {
-          done();
-        } else {
-          video.currentTime = targetTime;
-        }
+        video.currentTime = targetTime;
       } catch {
-        done();
+        video.removeEventListener("seeked", onSeeked);
+        clearTimeout(safetyTimer);
+        settle();
       }
     });
   };
@@ -297,18 +321,8 @@ export async function extractFramesFromVideo(
 
     const thumbnailUrl = canvas.toDataURL("image/jpeg", 0.90);
 
-    // Run monocular depth estimation on sharp keyframes
+    // Skip local neural depth estimation; depth/SfM is processed efficiently by the Python backend.
     let depthMapData: DepthMap | undefined;
-    if (isSharp) {
-      try {
-        const depthEngine = getDepthEngine({ resolution: 256, maxElevationM: 8.5 });
-        await depthEngine.initialize();
-        const dm = await depthEngine.estimateDepth(canvas);
-        depthMapData = dm;
-      } catch {
-        // Depth estimation failed — continue without it
-      }
-    }
 
     const frameData: VideoFrameData = {
       frameIndex: i + 1,
@@ -1063,9 +1077,9 @@ export function reconstructTerrainFromKeyframes(
             const d1 = dm1.data[dmRow1 * dm1.width + dmCol1] ?? 0;
             depthVal = (1 - alpha) * d0 + alpha * d1;
           }
-          // Invert: high depth value = far = low elevation
+          // High depth value (disparity) = near = high elevation
           // Calibrated elevation scaling for authentic aerial drone perspective
-          metricElevation = (1.0 - depthVal) * 6.5;
+          metricElevation = depthVal * 6.5;
           hasRealDepth = true;
         } else {
           // Fallback: procedural archetype terrain with subtle relief
@@ -1262,16 +1276,8 @@ export function reconstructTerrainFromKeyframes(
       };
     });
 
-    // Generate high-resolution tangent-space Normal Bump Map for dynamic lighting
+    // Normal map generation is handled by the Python SfM backend
     let normalMapUrl: string | undefined;
-    const keyframeWithDepth = activeKeyframes.find((f) => f.depthMap && f.depthMap.data.length > 0);
-    if (keyframeWithDepth?.depthMap) {
-      try {
-        normalMapUrl = generateNormalMapFromDepth(keyframeWithDepth.depthMap, 3.0);
-      } catch {
-        // Ignore if normal map generation fails
-      }
-    }
 
     return {
       missionId,

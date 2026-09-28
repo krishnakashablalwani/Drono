@@ -324,41 +324,13 @@ export function Tactical3DViewer({
   const sphericalRef = useRef({ radius: 95, phi: Math.PI / 3.2, theta: Math.PI / 4 });
   const isPlayingFlyoverRef = useRef(isPlayingFlyover);
 
-  const CORRIDORS = [
-    { id: "dji-0317", name: "DJI-0317 Corridor", file: "DJI_0317_corridor.mp4", url: "/sample_videos/DJI_0317_corridor.mp4" },
-    { id: "dji-0122", name: "DJI-0122 Ridge", file: "DJI_0122_ridge_sweep.mp4", url: "/sample_videos/DJI_0122_ridge_sweep.mp4" },
-    { id: "dji-0346", name: "DJI-0346 Valley", file: "DJI_0346_valley_survey.mp4", url: "/sample_videos/DJI_0346_valley_survey.mp4" },
-    { id: "dji-0051", name: "DJI-0051 Aerial", file: "DJI_0051_aerial.mp4", url: "/sample_videos/DJI_0051_aerial.mp4" },
-    { id: "dji-0087", name: "DJI-0087 Low Altitude", file: "DJI_0087_low_altitude.mp4", url: "/sample_videos/DJI_0087_low_altitude.mp4" },
-  ];
-
-  const handleSelectCorridor = (c: { id: string; name: string; file: string; url: string }) => {
-    const model = reconstructTerrainFromKeyframes([], {
-      missionId: `M-${c.id.toUpperCase()}`,
-      missionName: c.name,
-      videoFileName: c.file,
-      altitudeM: 65.0,
-    });
-    setActiveModel(model);
-    setActiveVideoUrl(c.url);
-  };
 
   useEffect(() => {
     isPlayingFlyoverRef.current = isPlayingFlyover;
   }, [isPlayingFlyover]);
 
-  // Default fallback terrain model (DJI-0317 Forward Corridor)
-  const defaultModel = useMemo(() => {
-    return reconstructTerrainFromKeyframes([], {
-      missionId: "M-0317-CORRIDOR",
-      missionName: "DJI-0317 Forward Corridor",
-      videoFileName: "DJI_0317_corridor.mp4",
-      altitudeM: 65.0,
-    });
-  }, []);
-
   // Active terrain model from context
-  const currentModel = activeModel || defaultModel;
+  const currentModel = activeModel;
 
   // Initialize default trajectory
   useEffect(() => {
@@ -773,7 +745,7 @@ export function Tactical3DViewer({
         "normal",
         new THREE.Float32BufferAttribute(model.normals, 3)
       );
-    } else {
+    } else if (!model.isPointCloud && model.indices.length > 0) {
       geometry.computeVertexNormals();
     }
     if (model.indices.length > 0) {
@@ -872,21 +844,24 @@ export function Tactical3DViewer({
     const terrainMesh = new THREE.Mesh(geometry, meshMaterial);
     terrainMesh.receiveShadow = true;
     terrainMesh.castShadow = true;
-    scene.add(terrainMesh);
-    terrainMeshRef.current = terrainMesh;
-
-    // 2. Build Solid Volumetric Geological Skirt & Pedestal Box
-    buildVolumetricSkirt(scene, model, scaledVertices);
+    if (!model.isPointCloud) {
+      scene.add(terrainMesh);
+      terrainMeshRef.current = terrainMesh;
+      
+      // 2. Build Solid Volumetric Geological Skirt & Pedestal Box
+      buildVolumetricSkirt(scene, model, scaledVertices);
+    }
 
     // 3. Point Cloud
     const pointMaterial = new THREE.PointsMaterial({
-      size: 1.2,
+      size: model.isPointCloud ? 2.5 : 1.2,
       vertexColors: true,
       transparent: true,
-      opacity: 0.85,
+      opacity: model.isPointCloud ? 0.9 : 0.85,
+      sizeAttenuation: true,
     });
     const pointCloud = new THREE.Points(geometry, pointMaterial);
-    pointCloud.visible = renderMode === "pointcloud";
+    pointCloud.visible = model.isPointCloud ? true : renderMode === "pointcloud";
     scene.add(pointCloud);
     pointCloudRef.current = pointCloud;
 
@@ -1091,17 +1066,19 @@ export function Tactical3DViewer({
     const group = new THREE.Group();
     droneTrajectoryGroupRef.current = group;
 
-    const curvePoints = poses.map((p) => new THREE.Vector3(p.position.x, p.position.y, p.position.z));
-    const curve = new THREE.CatmullRomCurve3(curvePoints);
-    const splineGeo = new THREE.BufferGeometry().setFromPoints(curve.getPoints(120));
-    const splineMat = new THREE.LineBasicMaterial({
-      color: 0x00f0ff,
-      linewidth: 2,
-      transparent: true,
-      opacity: 0.9,
-    });
-    const trajectoryLine = new THREE.Line(splineGeo, splineMat);
-    group.add(trajectoryLine);
+    if (poses && poses.length >= 2) {
+      const curvePoints = poses.map((p) => new THREE.Vector3(p.position.x, p.position.y, p.position.z));
+      const curve = new THREE.CatmullRomCurve3(curvePoints);
+      const splineGeo = new THREE.BufferGeometry().setFromPoints(curve.getPoints(120));
+      const splineMat = new THREE.LineBasicMaterial({
+        color: 0x00f0ff,
+        linewidth: 2,
+        transparent: true,
+        opacity: 0.9,
+      });
+      const trajectoryLine = new THREE.Line(splineGeo, splineMat);
+      group.add(trajectoryLine);
+    }
 
     poses.forEach((p, idx) => {
       if (idx % 3 === 0) {
@@ -1126,6 +1103,21 @@ export function Tactical3DViewer({
   // Switch Multi-Spectral & Shading Modes
   const handleRenderModeChange = (mode: RenderMode) => {
     setRenderMode(mode);
+    
+    // For point cloud models, the point cloud is always visible
+    const isPointCloudModel = currentModel?.isPointCloud;
+    
+    if (isPointCloudModel) {
+      // Point cloud model: always show point cloud, hide mesh-specific views
+      if (pointCloudRef.current) pointCloudRef.current.visible = true;
+      if (wireframeRef.current) wireframeRef.current.visible = mode === "wireframe";
+      if (terrainMeshRef.current) terrainMeshRef.current.visible = false;
+      if (skirtMeshRef.current) skirtMeshRef.current.visible = false;
+      if (basePlateRef.current) basePlateRef.current.visible = false;
+      if (sceneRef.current) sceneRef.current.background = new THREE.Color(0x06090e);
+      return;
+    }
+
     if (!terrainMeshRef.current || !pointCloudRef.current || !wireframeRef.current) return;
 
     const isMeshVisible = mode === "mesh" || mode === "topo" || mode === "heatmap" || mode === "flir" || mode === "nvg";
@@ -1441,7 +1433,7 @@ export function Tactical3DViewer({
             <span className="text-xs font-mono font-medium text-foreground">
               {currentModel
                 ? currentModel.isDirectVideoReconstruction
-                  ? `Direct Video Twin (${currentModel.depthSource === 'neural' ? 'Neural Depth' : 'Photogrammetric'})`
+                  ? `Direct Video Twin (${currentModel.depthSource === 'neural' ? 'Neural Depth' : currentModel.depthSource === 'procedural' ? 'Procedural Fallback' : 'Photogrammetric'})`
                   : "3D Model Active"
                 : "3D Viewport Standby"}
             </span>
@@ -1520,26 +1512,7 @@ export function Tactical3DViewer({
             </button>
           </div>
 
-          {/* Flight Corridor Selector */}
-          <div className="hidden lg:flex p-1 rounded-full items-center gap-1 border border-[var(--border-subtle)] bg-[var(--bg-primary)]/90 backdrop-blur-md shadow-sm">
-            {CORRIDORS.map((c) => {
-              const isCurrent = currentModel?.videoFileName === c.file || (!currentModel?.videoFileName && c.id === "dji-0317");
-              return (
-                <button
-                  key={c.id}
-                  onClick={() => handleSelectCorridor(c)}
-                  className={`px-2.5 py-1 rounded-full text-xs font-sans-ui transition-all ${
-                    isCurrent
-                      ? "bg-indigo-600 text-white font-semibold shadow-xs"
-                      : "text-[var(--color-slate-gray)] hover:text-foreground"
-                  }`}
-                  title={`Load ${c.name} 3D Model`}
-                >
-                  {c.name.replace("DJI-", "")}
-                </button>
-              );
-            })}
-          </div>
+
 
           {/* Elevation Relief Slider */}
           <div className="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-primary)]/90 backdrop-blur-md shadow-sm">

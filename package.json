@@ -12,7 +12,8 @@
     "lint": "npm run lint --prefix web",
     "test": "npm run test --prefix web",
     "test:watch": "npm run test:watch --prefix web",
-    "ai:dev": "python -m uvicorn ai_services.main:app --reload --port 8000"
+    "ai:dev": "cd ai_services && python -m uvicorn main:app --reload --port 8000",
+    "back": "cd ai_services && python -m uvicorn main:app --reload --port 8000"
   },
   "keywords": [
     "defense",

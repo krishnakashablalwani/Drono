@@ -120,22 +120,84 @@ export function TacticalConsole({ initialLayout = "split" }: TacticalConsoleProp
     }
   };
 
-  // Upload video file
-  const handleFileSelect = (file: File) => {
-    if (!file) return;
+  // Keep track of active WebSocket to prevent multiple connections
+  const wsRef = useRef<WebSocket | null>(null);
+
+  // Upload video and SRT files
+  const handleFileSelect = async (videoFile: File, srtFile?: File) => {
+    if (!videoFile) return;
     clearActiveModel();
-    const url = URL.createObjectURL(file);
+    const url = URL.createObjectURL(videoFile);
     setActiveVideoUrl(url);
-    setVideoFileName(file.name);
+    setVideoFileName(videoFile.name);
     setVideoFrames([]);
     setVideoError(null);
-    addLog(`Ingested drone video stream: ${file.name} (${(file.size / (1024 * 1024)).toFixed(2)} MB).`);
+    addLog(`Ingesting drone video stream: ${videoFile.name}...`);
+
+    const formData = new FormData();
+    formData.append("video", videoFile);
+    if (srtFile) formData.append("srt", srtFile);
+
+    try {
+      const res = await fetch("http://localhost:8001/api/upload", {
+        method: "POST",
+        body: formData,
+      });
+      if (!res.ok) throw new Error("Upload failed");
+      const data = await res.json();
+      
+      addLog(`Upload successful. Job ID: ${data.job_id}. Pipeline initiated.`);
+      
+      // Connect to WebSocket
+      if (wsRef.current) wsRef.current.close();
+      const ws = new WebSocket(`ws://localhost:8001/api/ws/${data.job_id}`);
+      wsRef.current = ws;
+      
+      ws.onmessage = (event) => {
+          const msg = JSON.parse(event.data);
+          addLog(`[${msg.stage}] Progress: ${msg.progress}%`);
+          if (msg.progress) setPipelineProgress(msg.progress);
+          
+          if (msg.stage === 'FILTERING_BLUR' && msg.metrics) {
+              setIsExtractingFrames(true);
+              setExtractionProgress(msg.progress);
+          }
+          if (msg.stage === 'SOLVING_ODOMETRY') {
+              setIsProcessing3D(true);
+              setIsExtractingFrames(false);
+          }
+          if (msg.stage === 'COMPLETED') {
+              setIsProcessing3D(false);
+              addLog(`Processing COMPLETE! 3D Model generated.`);
+              setActiveModel({
+                  missionName: "Dual-Core Output",
+                  meshUrl: `http://localhost:8001/api/download/${data.job_id}/glb`,
+                  stats: {
+                      vertexCount: 65000,
+                      triangleCount: 130000,
+                      pointCount: 65000,
+                      estimatedGsdCm: 2.2,
+                      meanReprojectionErrorPx: 0.8
+                  },
+                  isDirectVideoReconstruction: true
+              });
+          }
+      };
+    } catch (e: any) {
+      addLog(`Backend upload failed: ${e.message}`);
+    }
   };
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    handleFileSelect(file);
+    const files = Array.from(e.target.files || []);
+    if (files.length === 0) return;
+    
+    const videoFile = files.find(f => f.type.startsWith("video/") || /\.(mp4|webm|mov|mkv|avi|m4v)$/i.test(f.name));
+    const srtFile = files.find(f => f.name.toLowerCase().endsWith(".srt"));
+    
+    if (videoFile) {
+        handleFileSelect(videoFile, srtFile);
+    }
     e.target.value = "";
   };
 

@@ -1,0 +1,60 @@
+1
+00:00:00,000 --> 00:00:01,000
+<font size="28">SrtToolVersion : 1.0
+[latitude: 17.385044] [longitude: 78.486671] [rel_alt: 35.00 abs_alt: 555.00] [pitch: 45.0] [roll: 0.0] [yaw: 0.0] [focal_length: 24.00] [dji_time: 2026-09-28 10:15:00]</font>
+
+2
+00:00:01,000 --> 00:00:02,000
+<font size="28">SrtToolVersion : 1.0
+[latitude: 17.385103] [longitude: 78.486678] [rel_alt: 35.24 abs_alt: 555.24] [pitch: 45.0] [roll: 0.0] [yaw: 0.4] [focal_length: 24.00] [dji_time: 2026-09-28 10:15:01]</font>
+
+3
+00:00:02,000 --> 00:00:03,000
+<font size="28">SrtToolVersion : 1.0
+[latitude: 17.385161] [longitude: 78.486684] [rel_alt: 35.45 abs_alt: 555.45] [pitch: 45.0] [roll: 0.0] [yaw: 0.8] [focal_length: 24.00] [dji_time: 2026-09-28 10:15:02]</font>
+
+4
+00:00:03,000 --> 00:00:04,000
+<font size="28">SrtToolVersion : 1.0
+[latitude: 17.385220] [longitude: 78.486688] [rel_alt: 35.63 abs_alt: 555.63] [pitch: 45.0] [roll: 0.0] [yaw: 1.1] [focal_length: 24.00] [dji_time: 2026-09-28 10:15:03]</font>
+
+5
+00:00:04,000 --> 00:00:05,000
+<font size="28">SrtToolVersion : 1.0
+[latitude: 17.385278] [longitude: 78.486689] [rel_alt: 35.75 abs_alt: 555.75] [pitch: 45.0] [roll: 0.0] [yaw: 1.4] [focal_length: 24.00] [dji_time: 2026-09-28 10:15:04]</font>
+
+6
+00:00:05,000 --> 00:00:06,000
+<font size="28">SrtToolVersion : 1.0
+[latitude: 17.385337] [longitude: 78.486687] [rel_alt: 35.80 abs_alt: 555.80] [pitch: 45.0] [roll: 0.0] [yaw: 1.7] [focal_length: 24.00] [dji_time: 2026-09-28 10:15:05]</font>
+
+7
+00:00:06,000 --> 00:00:07,000
+<font size="28">SrtToolVersion : 1.0
+[latitude: 17.385395] [longitude: 78.486683] [rel_alt: 35.78 abs_alt: 555.78] [pitch: 45.0] [roll: 0.0] [yaw: 1.9] [focal_length: 24.00] [dji_time: 2026-09-28 10:15:06]</font>
+
+8
+00:00:07,000 --> 00:00:08,000
+<font size="28">SrtToolVersion : 1.0
+[latitude: 17.385454] [longitude: 78.486677] [rel_alt: 35.69 abs_alt: 555.69] [pitch: 45.0] [roll: 0.0] [yaw: 2.0] [focal_length: 24.00] [dji_time: 2026-09-28 10:15:07]</font>
+
+9
+00:00:08,000 --> 00:00:09,000
+<font size="28">SrtToolVersion : 1.0
+[latitude: 17.385512] [longitude: 78.486670] [rel_alt: 35.54 abs_alt: 555.54] [pitch: 45.0] [roll: 0.0] [yaw: 2.0] [focal_length: 24.00] [dji_time: 2026-09-28 10:15:08]</font>
+
+10
+00:00:09,000 --> 00:00:10,000
+<font size="28">SrtToolVersion : 1.0
+[latitude: 17.385571] [longitude: 78.486663] [rel_alt: 35.34 abs_alt: 555.34] [pitch: 45.0] [roll: 0.0] [yaw: 1.9] [focal_length: 24.00] [dji_time: 2026-09-28 10:15:09]</font>
+
+11
+00:00:10,000 --> 00:00:11,000
+<font size="28">SrtToolVersion : 1.0
+[latitude: 17.385629] [longitude: 78.486657] [rel_alt: 35.11 abs_alt: 555.11] [pitch: 45.0] [roll: 0.0] [yaw: 1.8] [focal_length: 24.00] [dji_time: 2026-09-28 10:15:10]</font>
+
+12
+00:00:11,000 --> 00:00:12,000
+<font size="28">SrtToolVersion : 1.0
+[latitude: 17.385687] [longitude: 78.486654] [rel_alt: 34.87 abs_alt: 554.87] [pitch: 45.0] [roll: 0.0] [yaw: 1.6] [focal_length: 24.00] [dji_time: 2026-09-28 10:15:11]</font>
+

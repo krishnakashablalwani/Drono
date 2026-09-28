@@ -10,8 +10,23 @@ vi.mock("@tensorflow/tfjs", () => ({
   ready: vi.fn().mockResolvedValue(undefined),
   getBackend: vi.fn().mockReturnValue("cpu"),
   setBackend: vi.fn().mockResolvedValue(undefined),
-  tidy: vi.fn((fn: () => any) => fn()),
 }));
+
+// Mock Depth Estimation model
+vi.mock("@tensorflow-models/depth-estimation", () => {
+  return {
+    SupportedModels: { ARPortraitDepth: "ARPortraitDepth" },
+    createEstimator: vi.fn().mockResolvedValue({
+      estimateDepth: vi.fn().mockResolvedValue([{
+        toTensor: () => ({
+          shape: [16, 16],
+          data: async () => new Float32Array(256).fill(0.5),
+          dispose: vi.fn(),
+        }),
+      }]),
+    }),
+  };
+});
 
 describe("DepthEstimationEngine", () => {
   beforeEach(() => {
@@ -95,45 +110,12 @@ describe("DepthEstimationEngine", () => {
     });
   });
 
-  describe("depth cue computation (internal methods via estimateDepth)", () => {
+  describe("depth estimation with model", () => {
     it("estimateDepth returns a valid depth map from a canvas", async () => {
-      // Create a simple mock canvas with a gradient pattern
       const mockCanvas = {
         width: 16,
         height: 16,
       } as HTMLCanvasElement;
-
-      const mockImageData = {
-        data: new Uint8ClampedArray(16 * 16 * 4),
-      };
-
-      // Create a vertical gradient (bright top, dark bottom)
-      for (let y = 0; y < 16; y++) {
-        for (let x = 0; x < 16; x++) {
-          const idx = (y * 16 + x) * 4;
-          const val = Math.floor((1 - y / 15) * 255);
-          mockImageData.data[idx] = val;
-          mockImageData.data[idx + 1] = val;
-          mockImageData.data[idx + 2] = val;
-          mockImageData.data[idx + 3] = 255;
-        }
-      }
-
-      const mockCtx = {
-        drawImage: vi.fn(),
-        getImageData: vi.fn().mockReturnValue(mockImageData),
-      };
-
-      // Mock document.createElement for the resize canvas
-      const origCreateElement = document.createElement.bind(document);
-      vi.spyOn(document, "createElement").mockImplementation((tag: string) => {
-        if (tag === "canvas") {
-          const c = origCreateElement("canvas");
-          vi.spyOn(c, "getContext").mockReturnValue(mockCtx as any);
-          return c;
-        }
-        return origCreateElement(tag);
-      });
 
       const engine = new DepthEstimationEngine({ resolution: 16 });
       await engine.initialize();
@@ -141,16 +123,13 @@ describe("DepthEstimationEngine", () => {
 
       expect(depthMap.width).toBe(16);
       expect(depthMap.height).toBe(16);
-      expect(depthMap.data.length).toBe(16 * 16);
+      expect(depthMap.data.length).toBe(256);
 
       // All depth values should be normalized to [0, 1]
       for (let i = 0; i < depthMap.data.length; i++) {
         expect(depthMap.data[i]).toBeGreaterThanOrEqual(0);
         expect(depthMap.data[i]).toBeLessThanOrEqual(1);
       }
-
-      // Restore
-      vi.restoreAllMocks();
     });
   });
 });

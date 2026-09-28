@@ -170,8 +170,18 @@ export function TacticalConsole({ initialLayout = "split" }: TacticalConsoleProp
               setIsProcessing3D(false);
               addLog(`Processing COMPLETE! 3D Model generated.`);
               setActiveModel({
+                  missionId: data.job_id,
                   missionName: "Dual-Core Output",
                   meshUrl: `http://localhost:8001/api/download/${data.job_id}/glb`,
+                  gridResolution: 1,
+                  gridSize: 1,
+                  vertices: [],
+                  normals: [],
+                  colors: [],
+                  indices: [],
+                  structures: [],
+                  trajectory: [],
+                  bounds: { minX: 0, maxX: 0, minY: 0, maxY: 0, minZ: 0, maxZ: 0 },
                   stats: {
                       vertexCount: 65000,
                       triangleCount: 130000,

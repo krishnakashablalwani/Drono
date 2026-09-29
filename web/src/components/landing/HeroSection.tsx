@@ -140,7 +140,7 @@ export function HeroSection() {
               </div>
               <div className="font-medium text-foreground">Spatial Baseline Filtering</div>
               <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
-                Uses 2D Laplacian Sharpness Variance to drop wind-buffeted frames, sampling strictly by >1.5m spatial displacement.
+                Uses 2D Laplacian Sharpness Variance to drop wind-buffeted frames, sampling strictly by &gt;1.5m spatial displacement.
               </p>
               <div className="text-[11px] font-mono text-[var(--color-slate-gray)] pt-1">
                 Eliminates hovering redundancy

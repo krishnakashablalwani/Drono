@@ -62,12 +62,6 @@ export function Navbar() {
           >
             Ingest Studio
           </Link>
-          <Link
-            href="/#team"
-            className="text-[var(--text-secondary)] hover:text-foreground transition-colors"
-          >
-            Team
-          </Link>
         </div>
 
         {/* Right CTAs */}
@@ -150,13 +144,6 @@ export function Navbar() {
             className="text-[var(--text-secondary)] hover:text-foreground py-1"
           >
             Ingest Studio
-          </Link>
-          <Link
-            href="/#team"
-            onClick={() => setMobileMenuOpen(false)}
-            className="text-[var(--text-secondary)] hover:text-foreground py-1"
-          >
-            Team
           </Link>
           <Link
             href="/console"

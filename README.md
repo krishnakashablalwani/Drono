@@ -123,17 +123,6 @@ uvicorn main:app --reload --port 8000
 
 ---
 
-## Engineering Collective (Team Drono)
-
-| Name | Role | Branch / Year | Roll No |
-| :--- | :--- | :--- | :--- |
-| **Krishna Kashab Lalwani** | Team Lead & System Architect | CSE • 2nd Year | `2451-25-733-075` |
-| **C. Supraja Raj** | Computer Vision & Pipeline Engineer | CSIT • 2nd Year | `2451-25-751-047` |
-| **B. Anjani** | UI/UX & Design Systems Lead | CSIT • 2nd Year | `2451-25-751-022` |
-| **Lakkakula Nayandeep** | 3D Graphics & WebGL Engineer | CSE • 2nd Year | `2451-25-733-103` |
-| **Singini Sathwi** | Visual Odometry & SfM Specialist | CSE • 2nd Year | `2452-25-733-104` |
-| **Mupkalkar Shreshta** | Geospatial Analytics Engineer | CSIT • 2nd Year | `2451-25-751-039` |
-
 ---
 
 ## License

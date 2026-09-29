@@ -6,7 +6,6 @@ import { ProblemStatementSection } from "@/components/landing/ProblemStatementSe
 import { PipelineVisualizer } from "@/components/landing/PipelineVisualizer";
 import { MathematicalFormulas } from "@/components/landing/MathematicalFormulas";
 import { FeatureGrid } from "@/components/landing/FeatureGrid";
-import { TeamSection } from "@/components/landing/TeamSection";
 
 export default function HomePage() {
   return (
@@ -18,7 +17,6 @@ export default function HomePage() {
         <PipelineVisualizer />
         <MathematicalFormulas />
         <FeatureGrid />
-        <TeamSection />
       </div>
       <Footer />
     </main>

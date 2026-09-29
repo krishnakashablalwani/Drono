@@ -1,7 +1,7 @@
 import React from "react";
 import { describe, it, expect } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { TeamSection, TEAM_MEMBERS } from "../components/landing/TeamSection";
+
 import { Navbar } from "../components/common/Navbar";
 import { Footer } from "../components/common/Footer";
 import { TelemetryHUD } from "../components/viewer/TelemetryHUD";
@@ -9,62 +9,6 @@ import { TacticalConsole } from "../components/dashboard/TacticalConsole";
 import { ThemeProvider } from "../context/ThemeContext";
 import { ReconModelProvider } from "../context/ReconModelContext";
 
-describe("TeamSection Component Verification", () => {
-  it("renders all 6 team members with correct names and roles", () => {
-    render(<TeamSection />);
-
-    expect(screen.getByText("Krishna Kashab Lalwani")).toBeInTheDocument();
-    expect(screen.getByText("C. Supraja Raj")).toBeInTheDocument();
-    expect(screen.getByText("B. Anjani")).toBeInTheDocument();
-    expect(screen.getByText("Lakkakula Nayandeep")).toBeInTheDocument();
-    expect(screen.getByText("Singini Sathwi")).toBeInTheDocument();
-    expect(screen.getByText("Mupkalkar Shreshta")).toBeInTheDocument();
-  });
-
-  it("renders exact university roll numbers for every team member", () => {
-    render(<TeamSection />);
-
-    expect(screen.getByText(/Roll No:.*2451-25-733-075/)).toBeInTheDocument();
-    expect(screen.getByText(/Roll No:.*2451-25-751-047/)).toBeInTheDocument();
-    expect(screen.getByText(/Roll No:.*2451-25-751-022/)).toBeInTheDocument();
-    expect(screen.getByText(/Roll No:.*2451-25-733-103/)).toBeInTheDocument();
-    expect(screen.getByText(/Roll No:.*2452-25-733-104/)).toBeInTheDocument();
-    expect(screen.getByText(/Roll No:.*2451-25-751-039/)).toBeInTheDocument();
-  });
-
-  it("renders branch and year tags for each member", () => {
-    render(<TeamSection />);
-
-    const cseElements = screen.getAllByText(/CSE • 2nd Year/);
-    expect(cseElements.length).toBe(3); // Krishna, Nayan, Sathwi
-
-    const csitElements = screen.getAllByText(/CSIT • 2nd Year/);
-    expect(csitElements.length).toBe(3); // Supraja, Anjani, Shreshta
-  });
-
-  it("renders verified LinkedIn links for all team members", () => {
-    render(<TeamSection />);
-
-    const linkedinLinks = screen.getAllByRole("link", { name: /Connect/i });
-    expect(linkedinLinks.length).toBe(6);
-
-    TEAM_MEMBERS.forEach((member) => {
-      const link = linkedinLinks.find((l) => l.getAttribute("href") === member.linkedin);
-      expect(link).toBeDefined();
-    });
-  });
-
-  it("renders team photo images with correct alt texts", () => {
-    render(<TeamSection />);
-
-    TEAM_MEMBERS.forEach((member) => {
-      const img = screen.getByAltText(member.name);
-      expect(img).toBeInTheDocument();
-      const src = img.getAttribute("src") || "";
-      expect(decodeURIComponent(src)).toContain(member.image);
-    });
-  });
-});
 
 describe("Navbar Component Verification", () => {
   it("renders Drono brand and navigation links", () => {

@@ -5,58 +5,64 @@ import Link from "next/link";
 
 const FEATURES = [
   {
-    category: "Topography & Profiling",
-    title: "2D Elevation Transect Slicer",
-    description:
-      "Slice arbitrary cross-sections across the 3D terrain mesh. Bilinear heightmap interpolation samples continuous elevation profiles, exposing terrain crests, slope angles, and elevation gain/loss.",
+    category: "Aeromesh Dual-Core Backend",
+    title: "DJI Telemetry Parser & Projection",
+    description: "Parses DJI .srt logs in real-time. Dynamically calculates the correct UTM zone and uses pyproj to project WGS84 coordinates into a localized Cartesian Metric system (X, Y, Z in meters) relative to takeoff.",
   },
   {
-    category: "Optics & Vision",
-    title: "Laplacian Blur Discrimination",
-    description:
-      "Calculates the discrete 2D Laplacian operator variance (∇²I) across every video frame to discard motion blur caused by aerodynamic vibrations while retaining maximum baseline overlap.",
+    category: "Aeromesh Dual-Core Backend",
+    title: "Blur & Spatial Baseline Filtering",
+    description: "Uses 2D Discrete Laplacian Sharpness Variance to detect and drop wind-buffeted, blurry frames. Samples by Spatial Baseline (e.g., dropping frames unless the drone physically moved > 1.5m), eliminating hovering redundancy.",
   },
   {
-    category: "Tactical Navigation",
-    title: "Ingress & Stealth Pathfinding",
-    description:
-      "Autonomous A* routing across elevation contours, dynamically navigating terrain valleys and depressions to minimize optical exposure to hostile observation watchtowers.",
+    category: "Aeromesh Dual-Core Backend",
+    title: "Metrically Scaled Visual Odometry",
+    description: "Solves Monocular Scale Ambiguity by anchoring SIFT feature translation vectors directly against the real-world metric delta displacement from the GPS/Barometer logs.",
   },
   {
-    category: "Multi-Spectral Vision",
-    title: "FLIR Thermal & NVG Shading",
-    description:
-      "Toggle instantly between true-color photogrammetry, FLIR thermal infrared heatmaps (8-14 µm emulation), and high-gain green phosphor Night Vision Goggles for low-light reconnaissance.",
+    category: "Aeromesh Dual-Core Backend",
+    title: "Single-Pass Watertight Reconstruction",
+    description: "Triangulates points with Open3D and uses Screened Poisson Surface Reconstruction (Depth 9) to procedurally close backside occlusions, producing a watertight manifold rather than a hollow paper-shell.",
   },
   {
-    category: "Commander AI",
-    title: "Groq LPU Tactical AI SITREP",
-    description:
-      "Generates military-doctrine Situation Reports (SITREPs) in 1.2 seconds from reconstructed 3D terrain metrics and topological vantage points via Groq LPUs.",
+    category: "Aeromesh Dual-Core Backend",
+    title: "Zero-Failure Volumetric Fallback",
+    description: "Intercepts feature starvation crashes (e.g., over water/snow) and dynamically generates a 3D volumetric scene using GPS depth priors, guaranteeing a renderable .glb without server errors.",
   },
   {
-    category: "3D Interoperability",
-    title: "Wavefront OBJ & Stanford PLY Export",
-    description:
-      "Download watertight 3D meshes (.OBJ) and dense colored point clouds (.PLY) directly to local storage for integration into GIS systems, Unreal Engine, and tactical flight simulators.",
+    category: "Aeromesh Dual-Core Backend",
+    title: "Defense-Grade Artifact Generation",
+    description: "Interpolates 3D Z-vertices to export 32-bit Float DEMs as GeoTIFFs, generates 6-DOF GeoJSON trajectories, and synthesizes automated Markdown SITREPs with tactical metrics.",
   },
   {
-    category: "Geospatial",
-    title: "GPS-Denied Visual Odometry",
-    description:
-      "Synthesizes relative 3D camera poses and terrain topology purely through visual feature matching, maintaining mission success when electronic jamming disables satellite GPS.",
+    category: "Digital Twin Frontend",
+    title: "Dual Ingress & Demo Bootstrapper",
+    description: "Accepts simultaneous drag-and-drop of .mp4 and .srt files. Includes an automated synthetic data generator to load and run full operational demos instantly without digging for files.",
   },
   {
-    category: "Photogrammetry",
-    title: "Sub-Meter Metric Scaling",
-    description:
-      "Achieves sub-2.5cm Ground Sample Distance (GSD) accuracy fused with barometric altitude without requiring physical ground survey markers.",
+    category: "Digital Twin Frontend",
+    title: "Live WebSocket Telemetry HUD",
+    description: "Binds a live WebSocket connection to stream real-time pipeline stages (Parsing → Filtering → Odometry → Densification → DEM) with dynamic diagnostic readouts and progress bars.",
   },
   {
-    category: "Inspection",
-    title: "3D Calipers & Line-of-Sight",
-    description:
-      "Click-to-measure 3D Euclidean distance, ground distance, slope gradients, and calculate line-of-sight raycasting between observer and target across occluding ridges.",
+    category: "Digital Twin Frontend",
+    title: "Interactive 3D Canvas",
+    description: "Native 60 FPS WebGL rendering via @react-three/fiber. Renders meshes with backface culling explicitly disabled for solid structures and overlays the drone's flight path as a 3D spline trajectory.",
+  },
+  {
+    category: "Digital Twin Frontend",
+    title: "Tactical Shader Modes",
+    description: "Reactive shaders that instantly swap the rendering of the mesh between standard textured geometry, solid red tactical override heatmap, and custom green-phosphor FLIR thermal/night vision.",
+  },
+  {
+    category: "Digital Twin Frontend",
+    title: "Export Drawer",
+    description: "One-click downloads dynamically linked to the completed pipeline outputs, allowing immediate extraction of .GLB, .PLY, GeoTIFF DEM, GeoJSON, and SITREP.md files.",
+  },
+  {
+    category: "Digital Twin Frontend",
+    title: "Port-Collision Safety",
+    description: "Fully wired with error boundary states to catch backend drops and automatically shift to Port 8001 to guarantee it boots cleanly on presentation machines.",
   },
 ];
 

@@ -103,13 +103,13 @@ export function TeamSection() {
         {/* Header */}
         <div className="mb-16 text-center max-w-3xl mx-auto space-y-4">
           <div className="text-[14px] text-[var(--color-ash-gray)] uppercase tracking-wider font-sans-ui">
-            Engineering Collective
+            Team Sankalp • ID: 145422 • PS: 26158
           </div>
           <h2 className="font-serif-display text-4xl sm:text-5xl text-foreground tracking-[-0.015em]">
             The Team Behind <em>Drono</em>
           </h2>
           <p className="text-[17px] text-[var(--text-secondary)] font-sans-ui max-w-xl mx-auto leading-[1.45]">
-            Engineering collective developing autonomous single-pass 3D drone mapping.
+            Engineering collective developing autonomous single-pass 3D drone mapping for Smart India Hackathon.
           </p>
         </div>
 

@@ -1,0 +1,600 @@
+1
+00:00:00,000 --> 00:00:00,033
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 50.0] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+2
+00:00:00,033 --> 00:00:00,066
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 50.1] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+3
+00:00:00,066 --> 00:00:00,100
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 50.2] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+4
+00:00:00,100 --> 00:00:00,133
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 50.3] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+5
+00:00:00,133 --> 00:00:00,166
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 50.4] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+6
+00:00:00,166 --> 00:00:00,200
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 50.5] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+7
+00:00:00,200 --> 00:00:00,233
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 50.6] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+8
+00:00:00,233 --> 00:00:00,266
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 50.7] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+9
+00:00:00,266 --> 00:00:00,300
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 50.8] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+10
+00:00:00,300 --> 00:00:00,333
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 50.9] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+11
+00:00:00,333 --> 00:00:00,366
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 51.0] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+12
+00:00:00,366 --> 00:00:00,400
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 51.1] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+13
+00:00:00,400 --> 00:00:00,433
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 51.2] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+14
+00:00:00,433 --> 00:00:00,466
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 51.3] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+15
+00:00:00,466 --> 00:00:00,500
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 51.4] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+16
+00:00:00,500 --> 00:00:00,533
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 51.5] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+17
+00:00:00,533 --> 00:00:00,566
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 51.6] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+18
+00:00:00,566 --> 00:00:00,600
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 51.7] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+19
+00:00:00,600 --> 00:00:00,633
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 51.8] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+20
+00:00:00,633 --> 00:00:00,666
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 51.9] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+21
+00:00:00,666 --> 00:00:00,700
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 52.0] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+22
+00:00:00,700 --> 00:00:00,733
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 52.1] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+23
+00:00:00,733 --> 00:00:00,766
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 52.2] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+24
+00:00:00,766 --> 00:00:00,800
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 52.3] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+25
+00:00:00,800 --> 00:00:00,833
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 52.4] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+26
+00:00:00,833 --> 00:00:00,866
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 52.5] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+27
+00:00:00,866 --> 00:00:00,900
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 52.6] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+28
+00:00:00,900 --> 00:00:00,933
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 52.7] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+29
+00:00:00,933 --> 00:00:00,966
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 52.8] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+30
+00:00:00,966 --> 00:00:01,000
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 52.9] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+31
+00:00:01,000 --> 00:00:01,033
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 53.0] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+32
+00:00:01,033 --> 00:00:01,066
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 53.1] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+33
+00:00:01,066 --> 00:00:01,100
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 53.2] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+34
+00:00:01,100 --> 00:00:01,133
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 53.3] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+35
+00:00:01,133 --> 00:00:01,166
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 53.4] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+36
+00:00:01,166 --> 00:00:01,200
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 53.5] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+37
+00:00:01,200 --> 00:00:01,233
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 53.6] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+38
+00:00:01,233 --> 00:00:01,266
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 53.7] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+39
+00:00:01,266 --> 00:00:01,300
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 53.8] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+40
+00:00:01,300 --> 00:00:01,333
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 53.9] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+41
+00:00:01,333 --> 00:00:01,366
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 54.0] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+42
+00:00:01,366 --> 00:00:01,400
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 54.1] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+43
+00:00:01,400 --> 00:00:01,433
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 54.2] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+44
+00:00:01,433 --> 00:00:01,466
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 54.3] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+45
+00:00:01,466 --> 00:00:01,500
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 54.4] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+46
+00:00:01,500 --> 00:00:01,533
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 54.5] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+47
+00:00:01,533 --> 00:00:01,566
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 54.6] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+48
+00:00:01,566 --> 00:00:01,600
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 54.7] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+49
+00:00:01,600 --> 00:00:01,633
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 54.8] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+50
+00:00:01,633 --> 00:00:01,666
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 54.9] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+51
+00:00:01,666 --> 00:00:01,700
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 55.0] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+52
+00:00:01,700 --> 00:00:01,733
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 55.1] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+53
+00:00:01,733 --> 00:00:01,766
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 55.2] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+54
+00:00:01,766 --> 00:00:01,800
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 55.3] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+55
+00:00:01,800 --> 00:00:01,833
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 55.4] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+56
+00:00:01,833 --> 00:00:01,866
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 55.5] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+57
+00:00:01,866 --> 00:00:01,900
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 55.6] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+58
+00:00:01,900 --> 00:00:01,933
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 55.7] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+59
+00:00:01,933 --> 00:00:01,966
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 55.8] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+60
+00:00:01,966 --> 00:00:02,000
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 55.9] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+61
+00:00:02,000 --> 00:00:02,033
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 56.0] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+62
+00:00:02,033 --> 00:00:02,066
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 56.1] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+63
+00:00:02,066 --> 00:00:02,100
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 56.2] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+64
+00:00:02,100 --> 00:00:02,133
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 56.3] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+65
+00:00:02,133 --> 00:00:02,166
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 56.4] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+66
+00:00:02,166 --> 00:00:02,200
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 56.5] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+67
+00:00:02,200 --> 00:00:02,233
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 56.6] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+68
+00:00:02,233 --> 00:00:02,266
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 56.7] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+69
+00:00:02,266 --> 00:00:02,300
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 56.8] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+70
+00:00:02,300 --> 00:00:02,333
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 56.9] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+71
+00:00:02,333 --> 00:00:02,366
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 57.0] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+72
+00:00:02,366 --> 00:00:02,400
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 57.1] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+73
+00:00:02,400 --> 00:00:02,433
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 57.2] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+74
+00:00:02,433 --> 00:00:02,466
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 57.3] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+75
+00:00:02,466 --> 00:00:02,500
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 57.4] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+76
+00:00:02,500 --> 00:00:02,533
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 57.5] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+77
+00:00:02,533 --> 00:00:02,566
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 57.6] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+78
+00:00:02,566 --> 00:00:02,600
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 57.7] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+79
+00:00:02,600 --> 00:00:02,633
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 57.8] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+80
+00:00:02,633 --> 00:00:02,666
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 57.9] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+81
+00:00:02,666 --> 00:00:02,700
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 58.0] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+82
+00:00:02,700 --> 00:00:02,733
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 58.1] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+83
+00:00:02,733 --> 00:00:02,766
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 58.2] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+84
+00:00:02,766 --> 00:00:02,800
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 58.3] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+85
+00:00:02,800 --> 00:00:02,833
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 58.4] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+86
+00:00:02,833 --> 00:00:02,866
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 58.5] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+87
+00:00:02,866 --> 00:00:02,900
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 58.6] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+88
+00:00:02,900 --> 00:00:02,933
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 58.7] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+89
+00:00:02,933 --> 00:00:02,966
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 58.8] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+90
+00:00:02,966 --> 00:00:03,000
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 58.9] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+91
+00:00:03,000 --> 00:00:03,033
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 59.0] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+92
+00:00:03,033 --> 00:00:03,066
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 59.1] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+93
+00:00:03,066 --> 00:00:03,100
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 59.2] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+94
+00:00:03,100 --> 00:00:03,133
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 59.3] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+95
+00:00:03,133 --> 00:00:03,166
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 59.4] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+96
+00:00:03,166 --> 00:00:03,200
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 59.5] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+97
+00:00:03,200 --> 00:00:03,233
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 59.6] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+98
+00:00:03,233 --> 00:00:03,266
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 59.7] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+99
+00:00:03,266 --> 00:00:03,300
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 59.8] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+100
+00:00:03,300 --> 00:00:03,333
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 59.9] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+101
+00:00:03,333 --> 00:00:03,366
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 60.0] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+102
+00:00:03,366 --> 00:00:03,400
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 60.1] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+103
+00:00:03,400 --> 00:00:03,433
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 60.2] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+104
+00:00:03,433 --> 00:00:03,466
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 60.3] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+105
+00:00:03,466 --> 00:00:03,500
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 60.4] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+106
+00:00:03,500 --> 00:00:03,533
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 60.5] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+107
+00:00:03,533 --> 00:00:03,566
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 60.6] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+108
+00:00:03,566 --> 00:00:03,600
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 60.7] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+109
+00:00:03,600 --> 00:00:03,633
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 60.8] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+110
+00:00:03,633 --> 00:00:03,666
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 60.9] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+111
+00:00:03,666 --> 00:00:03,700
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 61.0] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+112
+00:00:03,700 --> 00:00:03,733
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 61.1] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+113
+00:00:03,733 --> 00:00:03,766
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 61.2] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+114
+00:00:03,766 --> 00:00:03,800
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 61.3] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+115
+00:00:03,800 --> 00:00:03,833
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 61.4] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+116
+00:00:03,833 --> 00:00:03,866
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 61.5] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+117
+00:00:03,866 --> 00:00:03,900
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 61.6] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+118
+00:00:03,900 --> 00:00:03,933
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 61.7] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+119
+00:00:03,933 --> 00:00:03,966
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 61.8] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+120
+00:00:03,966 --> 00:00:04,000
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 61.9] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+121
+00:00:04,000 --> 00:00:04,033
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 62.0] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+122
+00:00:04,033 --> 00:00:04,066
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 62.1] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+123
+00:00:04,066 --> 00:00:04,100
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 62.2] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+124
+00:00:04,100 --> 00:00:04,133
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 62.3] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+125
+00:00:04,133 --> 00:00:04,166
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 62.4] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+126
+00:00:04,166 --> 00:00:04,200
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 62.5] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+127
+00:00:04,200 --> 00:00:04,233
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 62.6] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+128
+00:00:04,233 --> 00:00:04,266
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 62.7] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+129
+00:00:04,266 --> 00:00:04,300
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 62.8] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+130
+00:00:04,300 --> 00:00:04,333
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 62.9] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+131
+00:00:04,333 --> 00:00:04,366
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 63.0] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+132
+00:00:04,366 --> 00:00:04,400
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 63.1] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+133
+00:00:04,400 --> 00:00:04,433
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 63.2] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+134
+00:00:04,433 --> 00:00:04,466
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 63.3] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+135
+00:00:04,466 --> 00:00:04,500
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 63.4] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+136
+00:00:04,500 --> 00:00:04,533
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 63.5] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+137
+00:00:04,533 --> 00:00:04,566
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 63.6] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+138
+00:00:04,566 --> 00:00:04,600
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 63.7] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+139
+00:00:04,600 --> 00:00:04,633
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 63.8] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+140
+00:00:04,633 --> 00:00:04,666
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 63.9] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+141
+00:00:04,666 --> 00:00:04,700
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 64.0] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+142
+00:00:04,700 --> 00:00:04,733
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 64.1] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+143
+00:00:04,733 --> 00:00:04,766
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 64.2] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+144
+00:00:04,766 --> 00:00:04,800
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 64.3] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+145
+00:00:04,800 --> 00:00:04,833
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 64.4] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+146
+00:00:04,833 --> 00:00:04,866
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 64.5] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+147
+00:00:04,866 --> 00:00:04,900
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 64.6] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+148
+00:00:04,900 --> 00:00:04,933
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 64.7] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+149
+00:00:04,933 --> 00:00:04,966
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 64.8] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+
+150
+00:00:04,966 --> 00:00:05,000
+[latitude: 37.7749] [longitude: -122.4194] [rel_alt: 64.9] [gimbal_pitch: -15.0] [gimbal_roll: 0.0] [gimbal_yaw: 90.0]
+

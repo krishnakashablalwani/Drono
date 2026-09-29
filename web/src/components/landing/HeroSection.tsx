@@ -32,6 +32,15 @@ export function HeroSection() {
           </div>
 
           <div className="relative z-10 space-y-6">
+            <div className="flex justify-center">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium border border-[var(--color-sienna-brown)]/30 bg-[var(--color-blush-peach)] text-[var(--color-sienna-brown)] shadow-sm">
+                <span>Team Sankalp</span>
+                <span className="opacity-50">|</span>
+                <span>ID: 145422</span>
+                <span className="opacity-50">|</span>
+                <span>PS: 26158</span>
+              </span>
+            </div>
             {/* Steep Signature Display: Regular 400 Serif with mid-sentence italic */}
             <h1 className="font-serif-display text-5xl sm:text-6xl md:text-7xl lg:text-[80px] text-foreground leading-[1.08] tracking-[-0.025em]">
               Reconstructing tactical terrain from a <em>single drone pass</em>.
@@ -104,139 +113,139 @@ export function HeroSection() {
 
           {/* 8-Grid In-Depth Architecture Breakdown */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 font-sans-ui text-sm">
-            {/* Spec 1: Video Ingest */}
+            {/* Spec 1 */}
             <div className="p-4 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-subtle)] space-y-2">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono text-[var(--color-ash-gray)] uppercase">01 / Ingestion</span>
+                <span className="text-xs font-mono text-[var(--color-ash-gray)] uppercase">01 / Telemetry</span>
                 <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-[var(--color-mist-gray)] text-[var(--color-slate-gray)]">
-                  Canvas WASM
+                  DJI SRT
                 </span>
               </div>
-              <div className="font-medium text-foreground">Video Stream Extraction</div>
+              <div className="font-medium text-foreground">Dynamic Projection</div>
               <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
-                Direct client-side ingestion of 4K/1080p MP4/MOV video at 60 FPS. Offscreen frame extraction with temporal metadata synchronization.
+                Parses DJI .srt logs in real-time, calculating UTM zones to project WGS84 coordinates into localized Cartesian Metric systems.
               </p>
               <div className="text-[11px] font-mono text-[var(--color-slate-gray)] pt-1">
-                Input: Raw aerial video corridor
+                Pyproj • WGS84 to XYZ
               </div>
             </div>
 
-            {/* Spec 2: Blur Rejection */}
+            {/* Spec 2 */}
             <div className="p-4 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-subtle)] space-y-2">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono text-[var(--color-ash-gray)] uppercase">02 / Optics</span>
                 <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-[var(--color-mist-gray)] text-[var(--color-slate-gray)]">
-                  ∇²I Variance
+                  ∇²I Filter
                 </span>
               </div>
-              <div className="font-medium text-foreground">Discrete Laplacian Filter</div>
+              <div className="font-medium text-foreground">Spatial Baseline Filtering</div>
               <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
-                Calculates spatial derivative variance across each frame. Discards vibration-induced blur while preserving essential camera baseline overlap.
+                Uses 2D Laplacian Sharpness Variance to drop wind-buffeted frames, sampling strictly by >1.5m spatial displacement.
               </p>
               <div className="text-[11px] font-mono text-[var(--color-slate-gray)] pt-1">
-                Threshold: τ = 100-160 Var(L)
+                Eliminates hovering redundancy
               </div>
             </div>
 
-            {/* Spec 3: Visual Odometry */}
+            {/* Spec 3 */}
             <div className="p-4 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-subtle)] space-y-2">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono text-[var(--color-ash-gray)] uppercase">03 / Navigation</span>
                 <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-[var(--color-mist-gray)] text-[var(--color-slate-gray)]">
-                  6-DOF Pose
+                  SIFT/FLANN
                 </span>
               </div>
-              <div className="font-medium text-foreground">GPS-Denied Odometry</div>
+              <div className="font-medium text-foreground">Metrically Scaled Poses</div>
               <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
-                Solves relative epipolar geometry to reconstruct camera trajectory [X, Y, Z, pitch, roll, yaw] without relying on jammed satellite GPS signals.
+                Solves scale ambiguity by anchoring RANSAC visual translation vectors directly against metric GPS/Barometer displacement.
               </p>
               <div className="text-[11px] font-mono text-[var(--color-slate-gray)] pt-1">
-                Accuracy: &lt;0.45 px reprojection
+                Visual Odometry + GPS Fusion
               </div>
             </div>
 
-            {/* Spec 4: 3D Mesh Synthesis */}
+            {/* Spec 4 */}
             <div className="p-4 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-subtle)] space-y-2">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono text-[var(--color-ash-gray)] uppercase">04 / Geometry</span>
                 <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-[var(--color-mist-gray)] text-[var(--color-slate-gray)]">
-                  128k Polys
+                  Open3D
                 </span>
               </div>
-              <div className="font-medium text-foreground">Watertight Mesh & Grid</div>
+              <div className="font-medium text-foreground">Watertight Reconstruction</div>
               <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
-                Compiles dense vertex normals, elevation hypsometry, and synthetic building footprints into a metrically calibrated 3D terrain grid.
+                Uses Screened Poisson Surface Reconstruction (Depth 9) to procedurally close backside occlusions from single-pass flight.
               </p>
               <div className="text-[11px] font-mono text-[var(--color-slate-gray)] pt-1">
-                Scale: GSD 2.2 cm/pixel
+                Manifold mesh vs paper-shell
               </div>
             </div>
 
-            {/* Spec 5: 2D Elevation Slicer */}
+            {/* Spec 5 */}
             <div className="p-4 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-subtle)] space-y-2">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono text-[var(--color-ash-gray)] uppercase">05 / Hypsometry</span>
+                <span className="text-xs font-mono text-[var(--color-ash-gray)] uppercase">05 / Fallback</span>
                 <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-[var(--color-blush-peach)] text-[var(--color-sienna-brown)] font-medium">
-                  2D Slicer
+                  Zero-Fail
                 </span>
               </div>
-              <div className="font-medium text-foreground">Bilinear Transect Slicer</div>
+              <div className="font-medium text-foreground">Volumetric Generation</div>
               <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
-                Samples continuous elevation cross-sections across arbitrary cutlines. Computes slope degrees, crest points, elevation gain, and loss.
+                Intercepts feature starvation crashes (e.g., water/snow) and dynamically generates 3D volumetric scenes off GPS depth priors.
               </p>
               <div className="text-[11px] font-mono text-[var(--color-slate-gray)] pt-1">
-                Resolution: 60 interpolated points
+                Guaranteed renderable .glb
               </div>
             </div>
 
-            {/* Spec 6: Tactical Ingress Routing */}
+            {/* Spec 6 */}
             <div className="p-4 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-subtle)] space-y-2">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono text-[var(--color-ash-gray)] uppercase">06 / Routing</span>
+                <span className="text-xs font-mono text-[var(--color-ash-gray)] uppercase">06 / Console</span>
                 <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-[var(--color-mist-gray)] text-[var(--color-slate-gray)]">
-                  A* Stealth
+                  Ingress
                 </span>
               </div>
-              <div className="font-medium text-foreground">Stealth Ingress Pathfinding</div>
+              <div className="font-medium text-foreground">Dual Bootstrapper</div>
               <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
-                Calculates optimal low-exposure ingress paths through topographical depressions and valleys, avoiding hostile observation post line-of-sight.
+                Simultaneous drag-and-drop of MP4/SRT. Includes automated synthetic data generation for instant operational demos.
               </p>
               <div className="text-[11px] font-mono text-[var(--color-slate-gray)] pt-1">
-                Metric: Stealth Index (% hidden)
+                Port-Collision Safety enabled
               </div>
             </div>
 
-            {/* Spec 7: Multi-Spectral Shaders */}
+            {/* Spec 7 */}
             <div className="p-4 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-subtle)] space-y-2">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono text-[var(--color-ash-gray)] uppercase">07 / Optics</span>
+                <span className="text-xs font-mono text-[var(--color-ash-gray)] uppercase">07 / HUD</span>
                 <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-[var(--color-mist-gray)] text-[var(--color-slate-gray)]">
-                  FLIR + NVG
+                  WebSocket
                 </span>
               </div>
-              <div className="font-medium text-foreground">Multi-Spectral Shaders</div>
+              <div className="font-medium text-foreground">Live Telemetry Canvas</div>
               <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
-                Simulates FLIR thermal long-wave infrared (8-14 µm) heat gradients and high-gain green phosphor Night Vision Goggles for low-light operations.
+                60 FPS WebGL canvas bound to backend pipeline stages with Tactical Shaders (Standard, Heatmap, FLIR, NVG).
               </p>
               <div className="text-[11px] font-mono text-[var(--color-slate-gray)] pt-1">
-                Modes: RGB / FLIR / NVG / Heatmap
+                @react-three/fiber
               </div>
             </div>
 
-            {/* Spec 8: Tactical AI SITREPs */}
+            {/* Spec 8 */}
             <div className="p-4 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-subtle)] space-y-2">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono text-[var(--color-ash-gray)] uppercase">08 / AI Intelligence</span>
+                <span className="text-xs font-mono text-[var(--color-ash-gray)] uppercase">08 / Export</span>
                 <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-[var(--color-mist-gray)] text-[var(--color-slate-gray)]">
-                  Groq LPU
+                  Defense
                 </span>
               </div>
-              <div className="font-medium text-foreground">Automated AI SITREPs</div>
+              <div className="font-medium text-foreground">Artifact Generation</div>
               <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
-                Synthesizes formal NATO/IN military situation reports in 1.2s via Groq LPUs, evaluating choke points, defensive obstacles, and observation vantages.
+                Interpolates Z-vertices to export 32-bit Float DEM GeoTIFFs, 6-DOF GeoJSON paths, and automated Markdown SITREPs.
               </p>
               <div className="text-[11px] font-mono text-[var(--color-slate-gray)] pt-1">
-                Latency: &lt;1.2s • Llama-3.3 / Qwen
+                .GLB • .PLY • .TIF • .JSON
               </div>
             </div>
           </div>

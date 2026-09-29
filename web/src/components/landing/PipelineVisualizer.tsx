@@ -15,48 +15,48 @@ interface PipelineStep {
 const PIPELINE_STEPS: PipelineStep[] = [
   {
     id: "ingest",
-    title: "01. Stream Ingest",
-    subtitle: "Drone Video Ingestion",
+    title: "01. Telemetry Ingest",
+    subtitle: "DJI SRT & Geospatial Projection",
     description:
-      "Directly accepts raw 4K/1080p MP4/MOV aerial reconnaissance video. Decomposes video streams via offscreen HTML5 canvas sampling, synchronizing frame timestamps with synthetic or barometric UAV telemetry.",
-    tech: "HTML5 Canvas Decoders • MP4/MOV Parser • Telemetry Fusion",
-    metrics: "4K / 1080p @ 60 FPS Real-time",
+      "Parses DJI .srt logs in real-time. Dynamically calculates the correct UTM zone and uses pyproj to project WGS84 coordinates (Lat/Lon) into a localized Cartesian Metric system (X, Y, Z in meters) relative to takeoff.",
+    tech: "DJI Telemetry Parser • WGS84 to UTM Projection",
+    metrics: "Real-time coordinate fusion",
   },
   {
     id: "blur",
-    title: "02. Blur Filter",
+    title: "02. Blur & Spatial Filter",
     subtitle: "Laplacian Discrimination (∇²I)",
     description:
-      "Convolves each frame with the discrete 2D Laplacian kernel [[0,1,0],[1,-4,1],[0,1,0]]. Automatically discards frames degraded by aerodynamic jitter or rotor wash while guaranteeing continuous baseline camera overlap.",
-    tech: "Discrete 2D Laplacian Operator • Variance Thresholding",
-    metrics: "Filters ~45% blurry frames in <1.2s",
+      "Uses 2D Discrete Laplacian Sharpness Variance to detect and drop wind-buffeted, blurry frames. Samples by Spatial Baseline (dropping frames unless physically moved > 1.5m) to eliminate hovering redundancy.",
+    tech: "Discrete 2D Laplacian • Spatial Baseline Filtering",
+    metrics: "Filters hover redundancy & blur",
   },
   {
     id: "sfm",
     title: "03. Visual Odometry",
-    subtitle: "GPS-Denied Pose Estimation",
+    subtitle: "Metrically Scaled Poses",
     description:
-      "Calculates inter-frame optical flow vectors and solves epipolar geometry to derive 6-DOF camera poses [X, Y, Z, pitch, roll, yaw] along the single linear UAV flight vector without relying on external satellite GPS.",
-    tech: "Optical Flow Tracking • 6-DOF Epipolar Matrix",
-    metrics: "Mean reprojection error <0.45 px",
+      "Solves the Essential Matrix via RANSAC to recover camera poses, resolving Monocular Scale Ambiguity by anchoring visual translation vectors directly against real-world metric delta displacement from GPS/Barometer logs.",
+    tech: "SIFT/FLANN • RANSAC • Metric Scale Anchoring",
+    metrics: "Sub-meter metric scale accuracy",
   },
   {
     id: "dense",
-    title: "04. Point Cloud",
-    subtitle: "Watertight 3D Mesh & Elevation Grid",
+    title: "04. Watertight Mesh",
+    subtitle: "Single-Pass & Volumetric Fallback",
     description:
-      "Synthesizes metrically scaled 3D point clouds and watertight triangulated terrain meshes. Computes vertex normals, hypsometric elevation gradients, and identifies elevated observation vantage points.",
-    tech: "Triangulated Spatial Mesh • Bilinear Interpolation",
-    metrics: "128,000+ polygons synthesized",
+      "Triangulates points and uses Screened Poisson Reconstruction to procedurally close backside occlusions. Zero-Failure Volumetric Fallback intercepts feature starvation crashes, generating a scene purely off GPS depth priors.",
+    tech: "Open3D • Screened Poisson • Procedural Hole Filling",
+    metrics: "Guaranteed renderable .glb",
   },
   {
     id: "render",
-    title: "05. Tactical Viewport",
-    subtitle: "2D Slicer, FLIR/NVG & Groq AI",
+    title: "05. Digital Twin HUD",
+    subtitle: "WebGL Canvas & Export Drawer",
     description:
-      "Renders responsive 60 FPS 3D terrain with interactive 2D elevation cross-section slicing, tactical line-of-sight raycasting, FLIR thermal/NVG shaders, A* stealth ingress routes, and Groq LPU AI SITREPs.",
-    tech: "Three.js • 2D SVG Profile Slicer • Groq LPU API",
-    metrics: "60 FPS rendering • 1.2s AI SITREPs",
+      "Binds a Live WebSocket telemetry HUD streaming to a 60 FPS WebGL canvas. Supports reactive Tactical Shader Modes (FLIR/Night Vision) and exports Defense-Grade artifacts (GeoTIFF DEM, GeoJSON, SITREP).",
+    tech: "React Three Fiber • WebSocket • React Error Boundaries",
+    metrics: "60 FPS rendering • Port-Collision Safety",
   },
 ];
 

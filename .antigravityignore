@@ -1,0 +1,22 @@
+# Media & binary formats (Causes charset crash)
+*.mp4
+*.mkv
+*.avi
+*.mov
+*.pyc
+*.tsbuildinfo
+trace*
+*.log
+output.txt
+
+# Large dependency and build folders
+node_modules/
+**/node_modules/**
+.next/
+**/.next/**
+__pycache__/
+**/__pycache__/**
+.git/
+**/.git/**
+sample_videos/
+**/sample_videos/**
